@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'authentication',
     'contacts',
+    'corsheaders',
     'drf_yasg',
     # 'rest_framework_swagger',
 
@@ -58,12 +59,19 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:300",
+    "http://127.0.0.1:9000"
 ]
 
 ROOT_URLCONF = 'contactsapi.urls'

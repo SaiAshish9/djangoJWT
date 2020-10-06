@@ -15,6 +15,7 @@ django-rest-swagger = "*"
 django-heroku = "*"
 gunicorn = "*"
 psycopg2 = "*"
+django-cors-headers = "*"
 
 [requires]
 python_version = "3.7"

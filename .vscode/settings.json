@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "C:\\Users\\lenovo\\.virtualenvs\\contactsapi-jWUIxrXY"
+    "python.pythonPath": "C:\\Users\\lenovo\\.virtualenvs\\contactsapi-jWUIxrXY",
+    "python.formatting.provider": "yapf"
 }
