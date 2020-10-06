@@ -9,13 +9,14 @@ verify_ssl = true
 django = "*"
 djangorestframework = "*"
 pyjwt = "*"
-drf-yasg = "==1.17.0"
+drf-yasg = "==1.17.1"
 packaging = "*"
 django-rest-swagger = "*"
 django-heroku = "*"
 gunicorn = "*"
 psycopg2 = "*"
 django-cors-headers = "*"
+drf-generators = "*"
 
 [requires]
 python_version = "3.7"

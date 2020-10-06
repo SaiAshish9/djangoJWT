@@ -29,14 +29,16 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 SWAGGER_SETTINGS = {
-    "DEFAULT_GENERATOR_CLASS": "rest_framework.schemas.generators.BaseSchemaGenerator",
+    # "DEFAULT_GENERATOR_CLASS": "rest_framework.schemas.generators.BaseSchemaGenerator",
+    # "DEFAULT_AUTO_SCHEMA_CLASS": "apps.api.inspectors.SwaggerAutoSchema",
     'SECURITY_DEFINITIONS': {
         "Auth Token eg [Bearer (JWT) ]": {
             "type": "apiKey",
             "name": "Authorization",
             "in": "header"
         }
-    }
+    },
+    # 'VALIDATOR_URL': 'http://localhost:8000',
 }
 
 # Application definition
@@ -49,11 +51,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'drf_yasg',
     'authentication',
     'contacts',
     'corsheaders',
-    'drf_yasg',
-    # 'rest_framework_swagger',
+    # 'drf_generators',
+    # 'packaging',
+    'rest_framework_swagger',
 
 ]
 
@@ -128,6 +132,7 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'authentication.backends.JWTAuthentication',
     ),
+    'DEFAULT_SCHEMA_CLASS':'rest_framework.schemas.coreapi.AutoSchema'
 
 }
 # Internationalization
