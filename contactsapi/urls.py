@@ -22,6 +22,7 @@ from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from rest_framework_swagger.views import get_swagger_view
 # from django.conf.urls import url
+from .views import index
 
 schema_view = get_schema_view(
     openapi.Info(
@@ -40,9 +41,10 @@ schema_view = get_schema_view(
 
 
 urlpatterns = [
-    path('', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('api/auth/', include('authentication.urls')),
     path('api/contacts', include('contacts.urls')),
+    path('',index)
     # path('',)
     # path('',schema_view)
     # path('swagger',
